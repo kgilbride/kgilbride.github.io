@@ -711,6 +711,109 @@
     background: rgba(255,255,255,0.2);
   }
 
+  /* ── DIAGNOSTIC ── */
+  .diag-card {
+    background: var(--white);
+    border: 1px solid var(--rule-strong);
+    border-top: 3px solid var(--sage);
+    border-radius: 2px;
+    padding: 44px 48px;
+    max-width: 820px;
+  }
+
+  .diag-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  .diag-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .diag-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+
+  .diag-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .diag-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--off-white);
+    border-radius: 2px;
+    border-left: 2px solid var(--navy);
+  }
+
+  .diag-chip .cn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--sage);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .diag-chip span:last-child {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.35;
+  }
+
+  .diag-scale {
+    margin-bottom: 32px;
+  }
+
+  .diag-scale-track {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .diag-scale-track .seg-red   { flex: 5;  background: #d98a8a; }
+  .diag-scale-track .seg-amber { flex: 4;  background: #e0a93c; }
+  .diag-scale-track .seg-green { flex: 3;  background: var(--sage-light); }
+
+  .diag-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .diag-scale-labels span strong {
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .diag-card { padding: 32px 24px; }
+    .diag-chips { grid-template-columns: 1fr; }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
@@ -737,6 +840,7 @@
   <ul class="nav-links">
     <li><a href="#perspective">Perspective</a></li>
     <li><a href="#arc">Career</a></li>
+    <li><a href="#diagnostic">Diagnostic</a></li>
     <li><a href="#offer">Work with me</a></li>
     <li><a href="https://kgilbride.com/aboutme">About me</a></li>
     <li><a href="/contact/">Contact</a></li>
@@ -992,6 +1096,48 @@
         <h3>Analytical Storytelling</h3>
         <p>Boards and executives are drowning in data and dashboards — what's scarce is the right insight, framed so it drives a decision. I build the reports and write the narrative that turns analysis into aligned action.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC -->
+<section id="diagnostic">
+  <div class="container">
+    <p class="label">Diagnostic</p>
+    <h2 class="section-heading">Find out where your<br><em>shared logic breaks.</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="diag-card reveal">
+      <p class="diag-tagline">Free · Interactive · ~5 minutes</p>
+      <h3>The RevOps Health Check Scorecard</h3>
+      <p class="diag-body">
+        Six determinants of whether RevOps works as a function. Score each 0–2, get your total out of 12,
+        and a quick read on what to fix.
+      </p>
+
+      <div class="diag-chips">
+        <div class="diag-chip"><span class="cn">01</span><span>Structure &amp; time orientation</span></div>
+        <div class="diag-chip"><span class="cn">02</span><span>Influence on subsystems</span></div>
+        <div class="diag-chip"><span class="cn">03</span><span>Basis of rewards</span></div>
+        <div class="diag-chip"><span class="cn">04</span><span>Total influence</span></div>
+        <div class="diag-chip"><span class="cn">05</span><span>Locus of influence</span></div>
+        <div class="diag-chip"><span class="cn">06</span><span>Modes of conflict resolution</span></div>
+      </div>
+
+      <div class="diag-scale">
+        <div class="diag-scale-track">
+          <div class="seg-red"></div>
+          <div class="seg-amber"></div>
+          <div class="seg-green"></div>
+        </div>
+        <div class="diag-scale-labels">
+          <span><strong>0–5</strong> · Stalling</span>
+          <span><strong>6–9</strong> · Leaking</span>
+          <span><strong>10–12</strong> · Healthy</span>
+        </div>
+      </div>
+
+      <a href="/diagnostic/" class="btn-primary">Open the scorecard →</a>
     </div>
   </div>
 </section>
