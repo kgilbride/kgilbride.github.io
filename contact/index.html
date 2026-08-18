@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Sprint — Kyle Gilbride</title>
+<style>
+  :root{
+    --ink:#111814;
+    --ink-soft:#3c463f;
+    --muted:#6b756d;
+    --line:#e6eae7;
+    --bg:#ffffff;
+    --bg-soft:#f5f8f6;
+    --green-soft:#e9f2ec;
+    --accent:#1f9d57;
+    --accent-ink:#157a41;
+    --radius:14px;
+    --max:1060px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  h1{line-height:1.15;letter-spacing:-0.02em;margin:0;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;}
+  h1 span{color:var(--accent);}
+  p{margin:0 0 1rem;}
+  .lead{font-size:1.2rem;color:var(--ink-soft);}
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-weight:700;letter-spacing:-0.02em;font-size:1.05rem;}
+  nav .brand{display:inline-flex;align-items:center;gap:10px;}
+  .brand-photo{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block;flex:none;}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:var(--muted);font-size:0.95rem;}
+  .nav-links a:hover{color:var(--ink);}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:11px 20px;border-radius:999px;font-size:0.95rem;transition:background .15s ease;}
+  .btn:hover{background:var(--accent-ink);}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none;}}
+  /* page head */
+  .page-head{padding:72px 0 40px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;font-weight:700;color:var(--accent);margin-bottom:14px;}
+  .back-link{display:inline-block;color:var(--muted);font-size:0.9rem;margin-bottom:26px;transition:color .15s ease;}
+  .back-link:hover{color:var(--ink);}
+  .page-lead{margin:20px 0 0;max-width:620px;}
+  /* form */
+  .form-wrap{padding-bottom:84px;}
+  .form-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);max-width:780px;padding:16px;overflow:hidden;}
+  .form-card iframe{width:100%;min-height:900px;border:0;display:block;}
+  .fallback{max-width:780px;margin-top:22px;color:var(--muted);font-size:0.95rem;}
+  .fallback a{color:var(--accent-ink);border-bottom:1px solid var(--line);transition:border-color .15s ease;}
+  .fallback a:hover{border-color:var(--accent);}
+  /* footer */
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:0.9rem;border-top:1px solid var(--line);}
+  footer a{color:var(--ink);}
+  .foot-links{display:flex;gap:20px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  @media(max-width:768px){.form-card iframe{min-height:1080px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="brand" aria-label="Kyle Gilbride — home"><img class="brand-photo" src="data:image/jpeg;base64,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" alt="Kyle Gilbride" width="34" height="34"><span>Kyle Gilbride</span></a>
+    <div class="nav-links">
+      <a href="/#problem">The problem</a>
+      <a href="/#question">The question</a>
+      <a href="/#sprint">The sprint</a>
+      <a href="/#proof">Results</a>
+      <a href="#book" class="btn">Book a sprint</a>
+    </div>
+  </div>
+</nav>
+<section class="page-head" id="book">
+  <div class="wrap">
+    <a href="/" class="back-link">&larr; Back to home</a>
+    <div class="eyebrow">Book a Revenue Operating System Sprint</div>
+    <h1>Start the <span>conversation.</span></h1>
+    <p class="lead page-lead">Heading into annual planning, a raise, a new CRO, or a number you're not sure the current system can deliver? Tell me a little about the situation below and I'll be in touch.</p>
+  </div>
+</section>
+<section class="form-wrap">
+  <div class="wrap">
+    <div class="form-card">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSer8yukd4jWylo1SxnLtMjaYwFMD5jzX23ZL2GuWshq4vJglA/viewform?embedded=true"
+        title="Book a Sprint with Kyle Gilbride">
+        Loading&hellip;
+      </iframe>
+    </div>
+    <p class="fallback">
+      Form not loading, or prefer email? Reach me at
+      <a href="mailto:kyle@kgilbride.com?subject=Book%20a%20Sprint">kyle@kgilbride.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.linkedin.com/in/kyle-gilbride/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="brand" style="color:var(--ink);justify-content:center;">Kyle Gilbride</div>
+    <div class="foot-links">
+      <a href="mailto:kyle@kgilbride.com">kyle@kgilbride.com</a>
+      <a href="https://www.linkedin.com/in/kyle-gilbride/">LinkedIn</a>
+      <a href="/">kgilbride.com</a>
+    </div>
+    <div style="margin-top:18px;font-size:0.82rem;color:var(--muted);">&copy; 2026 GTM Alpha LLC. All rights reserved.</div>
+  </div>
+</footer>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3f8709849d2746e2a1b4bd3157fc8118"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
