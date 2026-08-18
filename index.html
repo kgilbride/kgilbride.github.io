@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kyle Gilbride — Wire your revenue organization to win</title>
+<title>Kyle Gilbride — You've outgrown running GTM on instinct</title>
 <style>
   :root{
     --ink:#111814;
@@ -36,11 +36,6 @@
   h3{font-size:1.15rem;font-weight:650;}
   p{margin:0 0 1rem;}
   .lead{font-size:1.2rem;color:var(--ink-soft);}
-
-  /* icons */
-  .ic{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none;}
-  .icwrap{color:var(--ink-soft);display:inline-flex;}
-
   /* nav */
   nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
@@ -53,26 +48,22 @@
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
   .btn-ghost:hover{background:var(--bg-soft);}
   @media(max-width:720px){.nav-links a:not(.btn){display:none;}}
-
   /* sections */
   section{padding:76px 0;border-bottom:1px solid var(--line);}
   .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;font-weight:700;color:var(--accent);margin-bottom:14px;}
   .center{text-align:center;}
   .narrow{max-width:730px;margin-left:auto;margin-right:auto;}
-
   /* hero */
   .hero{padding:96px 0 84px;text-align:center;border-bottom:1px solid var(--line);}
   .hero h1 span{color:var(--accent);}
-  .hero .lead{max-width:660px;margin:22px auto 32px;}
+  .hero .lead{max-width:680px;margin:22px auto 32px;}
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
   /* proof strip */
   .strip{background:var(--bg-soft);border-bottom:1px solid var(--line);padding:34px 0;}
   .strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
   .strip-grid .stat{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;}
   .strip-grid .label{font-size:0.85rem;color:var(--muted);margin-top:4px;}
   @media(max-width:720px){.strip-grid{grid-template-columns:repeat(2,1fr);gap:22px 16px;}}
-
   /* checklist */
   .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin-top:32px;}
   .check{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;font-size:0.98rem;color:var(--ink-soft);cursor:pointer;transition:border-color .15s ease,background .15s ease;}
@@ -82,8 +73,17 @@
   .check input.box:checked{background:var(--accent);}
   .check input.box:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
   @media(max-width:720px){.checklist{grid-template-columns:1fr;}}
-  .punch{margin-top:30px;font-size:1.2rem;font-weight:600;}
-
+  .punch{margin-top:30px;font-size:1.25rem;font-weight:600;line-height:1.4;}
+  .punch strong{color:var(--accent-ink);}
+  /* wedge */
+  .wedge{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+  .wedge .opt{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--bg-soft);}
+  .wedge .opt h3{font-size:1.02rem;}
+  .wedge .opt p{margin:8px 0 0;color:var(--muted);font-size:0.94rem;}
+  .wedge .opt .q{font-size:0.8rem;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.06em;}
+  @media(max-width:720px){.wedge{grid-template-columns:1fr;}}
+  .wedge-answer{margin-top:22px;border:1.5px solid var(--ink);border-radius:var(--radius);padding:22px 24px;background:#fff;font-size:1.1rem;}
+  .wedge-answer strong{color:var(--accent-ink);}
   /* cards */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;}
   .card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;}
@@ -91,473 +91,224 @@
   .card h3{margin:8px 0 10px;}
   .card p{margin:0;color:var(--ink-soft);font-size:0.98rem;}
   @media(max-width:720px){.cards{grid-template-columns:1fr;}}
-
-  /* before-the-sprint icon strip */
-  .subhead{font-weight:700;letter-spacing:0.02em;font-size:1.05rem;margin:44px 0 0;text-transform:uppercase;}
-  .beforebox{border:1px solid var(--line);border-radius:16px;padding:26px 22px;margin-top:18px;}
-  .iconstrip{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;}
-  .istep{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:0 6px;}
-  .istep .lab{font-size:0.82rem;color:var(--muted);line-height:1.3;}
-  .istrip-foot{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);margin-top:20px;padding-top:18px;color:var(--ink-soft);font-size:0.96rem;}
-  .istrip-foot .icwrap{color:var(--accent);}
-  @media(max-width:760px){.iconstrip{grid-template-columns:repeat(3,1fr);gap:20px 10px;}}
-  @media(max-width:440px){.iconstrip{grid-template-columns:repeat(2,1fr);}}
-
-  /* week timeline */
-  .tlphase{display:grid;grid-template-columns:220px 1fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
-  .tlside{background:var(--green-soft);padding:28px 26px;display:flex;flex-direction:column;gap:8px;justify-content:center;}
-  .tlside .cal{color:var(--accent-ink);}
-  .tlweek{font-weight:700;letter-spacing:0.06em;font-size:1.15rem;}
-  .tlname{text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;color:var(--muted);font-weight:700;}
-  .tlmain{padding:4px 28px;}
-  .tlrow{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
-  .tlrow:last-child{border-bottom:none;}
-  .tlrow h4{margin:0 0 4px;font-size:1rem;font-weight:650;}
-  .tlrow p{margin:0;font-size:0.92rem;color:var(--muted);}
-  .tlarrow{text-align:center;color:var(--accent);font-size:1.5rem;line-height:1;margin:6px 0;}
-  @media(max-width:720px){.tlphase{grid-template-columns:1fr;}}
-
-  /* outcome */
-  .outbox{border:1px solid var(--line);border-radius:16px;padding:26px 22px;margin-top:30px;}
-  .out6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-  .out-results{display:grid;grid-template-columns:1fr 1fr;gap:22px;border-top:1px solid var(--line);margin-top:22px;padding-top:22px;}
-  .out-results .r{display:flex;gap:14px;align-items:flex-start;}
-  .out-results .r .icwrap{color:var(--accent-ink);}
-  .out-results p{margin:0;font-size:0.96rem;color:var(--ink-soft);}
-  @media(max-width:760px){.out6{grid-template-columns:repeat(3,1fr);gap:20px 10px;}}
-  @media(max-width:720px){.out-results{grid-template-columns:1fr;}}
-  @media(max-width:440px){.out6{grid-template-columns:repeat(2,1fr);}}
-
-  /* arrow list (proof) */
+  /* causal ladder */
+  .ladder{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:34px 0 6px;}
+  .ladder .rung{border:1px solid var(--line);background:var(--bg-soft);border-radius:999px;padding:9px 16px;font-weight:600;font-size:0.95rem;}
+  .ladder .rung.end{background:var(--green-soft);border-color:var(--accent);color:var(--accent-ink);}
+  .ladder .sep{color:var(--accent);font-weight:700;}
+  @media(max-width:720px){.ladder .sep{display:none;}.ladder{flex-direction:column;align-items:stretch;}.ladder .rung{text-align:center;}}
+  .outnote{margin-top:26px;font-size:1.1rem;font-weight:600;}
+  /* weeks */
+  .weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}
+  .week{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;}
+  .week .top{background:var(--green-soft);padding:16px 20px;}
+  .week .wk{font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+  .week .nm{font-size:1.25rem;font-weight:700;color:var(--accent-ink);letter-spacing:-0.01em;}
+  .week .body{padding:18px 20px;color:var(--ink-soft);font-size:0.96rem;}
+  @media(max-width:720px){.weeks{grid-template-columns:1fr;}}
+  /* proof list */
   .arrowlist{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;padding:0;}
-  .arrowlist li{list-style:none;padding-left:28px;position:relative;color:var(--ink-soft);}
+  .arrowlist li{list-style:none;padding-left:28px;position:relative;color:var(--ink-soft);font-size:1rem;}
   .arrowlist li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700;}
   @media(max-width:720px){.arrowlist{grid-template-columns:1fr;}}
-
-  /* AIC */
-  .aic{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;}
-  .aic .col{border-top:3px solid var(--accent);padding-top:18px;}
-  .aic h3{margin-bottom:8px;}
-  .aic p{color:var(--ink-soft);font-size:0.96rem;margin:0;}
-  @media(max-width:720px){.aic{grid-template-columns:1fr;}}
-
-  /* loop diagrams */
-  .loops-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px;}
-  @media(max-width:900px){.loops-wrap{grid-template-columns:1fr;}}
-  .dgram{border:1px solid var(--line);border-radius:16px;padding:24px 22px;background:#fff;}
-  .dgram-title{text-transform:uppercase;font-size:1.02rem;font-weight:700;letter-spacing:0.02em;text-align:center;}
-  .dgram-sub{text-align:center;color:var(--muted);font-size:0.88rem;margin:8px 0 20px;}
-  .dgram-svg{width:100%;height:auto;display:block;}
-  .dgram-svg text{font-family:inherit;}
-  .brk-label{display:block;text-align:center;text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;font-weight:700;color:var(--muted);margin:24px 0 14px;}
-  .brk-row{display:grid;gap:8px;}
-  .brk-row.five{grid-template-columns:repeat(5,1fr);}
-  .brk-row.four{grid-template-columns:repeat(4,1fr);}
-  .brk{border:1px solid var(--line);border-radius:10px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;font-size:0.72rem;color:var(--ink-soft);line-height:1.2;}
-  .brk .ic{width:22px;height:22px;color:var(--ink-soft);}
-  .fixbar{margin-top:18px;border:1.5px solid var(--ink);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;font-size:0.94rem;color:var(--ink);}
-  .fixbar .fixcheck{color:var(--accent);display:inline-flex;flex:none;}
-  .fixbar .fixcheck .ic{width:26px;height:26px;}
-  @media(max-width:440px){.brk-row.five,.brk-row.four{grid-template-columns:repeat(2,1fr);}}
-
+  .cred{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:1rem;}
+  /* before / intervention / result records */
+  .records{margin-top:34px;display:grid;gap:16px;}
+  .rec{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;}
+  .rec-col{padding:20px 20px;border-right:1px solid var(--line);}
+  .rec-col:last-child{border-right:none;}
+  .rec-col.after{background:var(--green-soft);}
+  .rlab{display:block;text-transform:uppercase;letter-spacing:0.1em;font-size:0.68rem;font-weight:700;color:var(--muted);margin-bottom:8px;}
+  .rec-col.after .rlab{color:var(--accent-ink);}
+  .rec-col p{margin:0;font-size:0.95rem;color:var(--ink-soft);}
+  .rec-col.after p{color:var(--ink);}
+  .rec-col.after strong{color:var(--accent-ink);}
+  @media(max-width:720px){.rec{grid-template-columns:1fr;}.rec-col{border-right:none;border-bottom:1px solid var(--line);}.rec-col:last-child{border-bottom:none;}}
   /* closing */
   .closing{background:var(--ink);color:#fff;text-align:center;border-bottom:none;}
   .closing h2{color:#fff;}
   .closing p{color:#c2ccc5;}
   .closing .lead{color:#c2ccc5;}
+  .closing .trigger{color:#fff;font-weight:600;font-size:1.05rem;margin-top:6px;}
   .closing .btn-ghost{color:#fff;border-color:#38423b;}
   .closing .btn-ghost:hover{background:#1d251f;}
-
   footer{padding:44px 0;text-align:center;color:var(--muted);font-size:0.9rem;}
   footer a{color:var(--ink);}
   .foot-links{display:flex;gap:20px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap nav-inner">
     <a href="#top" class="brand">Kyle Gilbride</a>
     <div class="nav-links">
       <a href="#problem">The problem</a>
+      <a href="#question">The question</a>
       <a href="#sprint">The sprint</a>
-      <a href="#timeline">How it works</a>
-      <a href="#proof">Track record</a>
+      <a href="#proof">Results</a>
       <a href="#contact" class="btn">Book a sprint</a>
     </div>
   </div>
 </nav>
-
 <header class="hero" id="top">
   <div class="wrap">
     <div class="eyebrow">Revenue Operating System Sprint</div>
-    <h1>Wire your revenue organization <span>to win.</span></h1>
-    <p class="lead">Your company has a revenue plan. But are your people, processes, data, and systems actually set up to hit it? I help B2B leaders find the gaps, align the team around the right priorities, and build a practical plan for more consistent execution.</p>
+    <h1>You've outgrown running GTM <span>on instinct.</span></h1>
+    <p class="lead">You have a number, and you've added people, tools, process, and management to hit it. But the pieces don't behave like one system — so scaling adds complexity instead of leverage, and you're no longer sure you're getting enough return on what you spend to grow. The Sprint finds what's structurally limiting execution and gives leadership a model to fix it.</p>
     <div class="cta-row">
       <a href="#contact" class="btn">Book a Revenue Operating System Sprint</a>
-      <a href="#problem" class="btn btn-ghost">See if it's for you</a>
+      <a href="#problem" class="btn btn-ghost">See if this is you</a>
     </div>
   </div>
 </header>
-
 <div class="strip">
   <div class="wrap">
     <div class="strip-grid">
-      <div><div class="stat">13+ yrs</div><div class="label">Scaling B2B revenue orgs</div></div>
+      <div><div class="stat">27 → 4</div><div class="label">Comp plans simplified</div></div>
+      <div><div class="stat">1.7x</div><div class="label">ACV growth past $1B</div></div>
       <div><div class="stat">$40M–$1B+</div><div class="label">Revenue stages served</div></div>
       <div><div class="stat">800+</div><div class="label">Sellers enabled worldwide</div></div>
-      <div><div class="stat">27 → 4</div><div class="label">Comp plans simplified</div></div>
     </div>
   </div>
 </div>
-
 <section id="problem">
   <div class="wrap">
-    <div class="eyebrow">Do you have an execution problem?</div>
-    <h2 class="narrow" style="margin:0 auto;">These usually aren't separate problems.</h2>
+    <div class="eyebrow">Does this sound familiar?</div>
+    <h2 class="narrow" style="margin:0 auto;">The signs you've outgrown instinct.</h2>
     <p class="lead narrow" style="margin:16px auto 0;">Check the ones that sound familiar:</p>
-
     <div class="checklist">
       <label class="check"><input type="checkbox" class="box"><span>Sales, marketing, CS, and finance work from different numbers.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>Ownership gets fuzzy the moment work crosses functions.</span></label>
       <label class="check"><input type="checkbox" class="box"><span>Forecasts rely on judgment and heroics, not a repeatable process.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>Customer handoffs break down across buying and renewal.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>You have plenty of tools, but people still coordinate by hand.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>Leaders keep re-litigating decisions no one wrote down.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>Strategy doesn't translate into clear roles, workflows, and measures.</span></label>
-      <label class="check"><input type="checkbox" class="box"><span>Growth made you more complicated, not more coordinated.</span></label>
       <label class="check"><input type="checkbox" class="box"><span>Your revenue leader owns the number without controlling the system that delivers it.</span></label>
+      <label class="check"><input type="checkbox" class="box"><span>Ownership gets fuzzy the moment work crosses functions.</span></label>
+      <label class="check"><input type="checkbox" class="box"><span>You keep adding tools and headcount, but coordination still happens by hand.</span></label>
+      <label class="check"><input type="checkbox" class="box"><span>Growth made you more complicated, not more coordinated.</span></label>
     </div>
-
-    <p class="punch narrow">They look like separate fires. They're usually the same one: the revenue organization was never designed as a single connected system.</p>
+    <p class="punch narrow">They look like separate fires. They're usually <strong>the same one</strong>: the organization scaled before the revenue system was ever deliberately designed.</p>
   </div>
 </section>
-
+<section id="question">
+  <div class="wrap">
+    <div class="eyebrow">The question worth answering first</div>
+    <h2 class="narrow" style="margin:0 auto 16px;">Before you add another hire, tool, or workflow — decide what the business actually needs built.</h2>
+    <p class="lead narrow" style="margin:0 auto;">Every option in front of you answers the same question: <em>who is going to do the work?</em> But a great RevOps hire can inherit an unclear model. A fractional operator can execute the wrong priorities. An agency can automate a bad process faster. None of that helps if the underlying system was never designed.</p>
+    <div class="wedge">
+      <div class="opt">
+        <div class="q">Internal hire</div>
+        <h3>Adds capacity</h3>
+        <p>Can be excellent — and still inherit a revenue model no one ever deliberately architected.</p>
+      </div>
+      <div class="opt">
+        <div class="q">Fractional RevOps</div>
+        <h3>Adds execution</h3>
+        <p>Moves fast on the priorities they're handed — even when those priorities are the wrong ones.</p>
+      </div>
+      <div class="opt">
+        <div class="q">GTM engineering agency</div>
+        <h3>Adds automation</h3>
+        <p>Wires up and scales the process you have — including its structural flaws.</p>
+      </div>
+    </div>
+    <div class="wedge-answer">
+      The Sprint answers the prior question: <strong>do we actually know what should be built?</strong> Think of it as the architect's step before the general contractor — deciding the revenue system the business needs before you pour resources into it.
+    </div>
+  </div>
+</section>
 <section id="sprint">
   <div class="wrap">
     <div class="eyebrow">The Revenue Operating System Sprint</div>
-    <h2 class="narrow" style="margin:0 auto 16px;">A focused engagement to find what's slowing growth — and a plan to fix it.</h2>
-    <p class="lead narrow" style="margin:0 auto;">The sprint connects strategy to execution across five layers: people and org design, customer and revenue processes, data and decision-making, technology and automation, and cross-functional ownership. The goal isn't another strategy deck. It's a shared diagnosis, clear choices, and a plan your team can actually run.</p>
-
-    <div class="eyebrow" style="margin-top:56px;">What you get</div>
+    <h2 class="narrow" style="margin:0 auto 16px;">A focused engagement that resolves four questions leadership can't afford to guess.</h2>
+    <p class="lead narrow" style="margin:0 auto;">Diagnose, then architect, then prioritize. The output isn't another strategy deck or a source of fractional capacity — it's a shared answer to the decisions your team is currently making on instinct.</p>
     <div class="cards">
       <div class="card">
         <div class="num">01</div>
-        <h3>A clear diagnosis of what's breaking</h3>
-        <p>I review your strategy, metrics, org, customer journey, workflows, and systems — then name the few problems that matter most: where revenue is lost or delayed, where ownership is unclear, and where tools add complexity instead of leverage.</p>
+        <h3>What's actually preventing us from hitting the plan?</h3>
+        <p>A clear diagnosis across strategy, metrics, org, customer journey, workflows, and systems — naming the few structural problems where revenue is lost or delayed, not a long list of symptoms.</p>
       </div>
       <div class="card">
         <div class="num">02</div>
-        <h3>A shared revenue operating model</h3>
-        <p>One model for how the commercial org should work together: the outcomes you're after, the segments and motions that deserve priority, who owns each part of the lifecycle, and the decisions, systems, and rhythms that support execution.</p>
+        <h3>What needs to change — and what should we leave alone?</h3>
+        <p>One revenue operating model: the outcomes you're after, the motions that deserve priority, and the deliberate design choices that turn a collection of teams into a system.</p>
       </div>
       <div class="card">
         <div class="num">03</div>
-        <h3>A prioritized execution roadmap</h3>
-        <p>A practical plan that separates what to fix now, what to test before scaling, what to stop doing, and what needs deeper change — with an owner and a measure for each, sequenced by impact, effort, and readiness.</p>
+        <h3>Who should own what across the lifecycle?</h3>
+        <p>Clear accountability from demand through sale, adoption, renewal, and expansion — so ownership stops getting fuzzy the moment work crosses functions.</p>
       </div>
       <div class="card">
         <div class="num">04</div>
-        <h3>A simple decision &amp; learning system</h3>
-        <p>A lightweight way to capture the problem, the decision, the assumptions, and what actually happened — so hard-won knowledge compounds instead of disappearing into Slack threads and people's heads.</p>
+        <h3>What do we fix now, test, stop, automate, or hire for?</h3>
+        <p>A prioritized roadmap with an owner and a measure for each move, sequenced by impact, effort, and readiness — so leadership knows exactly what to fund next.</p>
       </div>
     </div>
   </div>
 </section>
-
-<section id="timeline">
+<section id="how">
   <div class="wrap">
     <div class="eyebrow">How it works</div>
-    <h2 class="narrow" style="margin:0 auto;">Three weeks, from diagnosis to a plan you can run.</h2>
-
-    <div class="subhead">Before the sprint</div>
-    <div class="beforebox">
-      <div class="iconstrip">
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><span class="lab">Strategic &amp; financial plans</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="4" rx="1"/><rect x="3" y="15" width="6" height="4" rx="1"/><rect x="15" y="15" width="6" height="4" rx="1"/><path d="M12 7v4M6 15v-2h12v2"/></svg></span><span class="lab">Org charts</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx="0.5"/><rect x="11" y="7" width="3" height="10" rx="0.5"/><rect x="16" y="13" width="3" height="4" rx="0.5"/></svg></span><span class="lab">Pipeline &amp; customer metrics</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span><span class="lab">Process docs</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span class="lab">Systems &amp; data architecture</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></span><span class="lab">Customer journey materials</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4v-4H4z"/></svg></span><span class="lab">Leadership decks &amp; notes</span></div>
+    <h2 class="narrow" style="margin:0 auto;">From diagnosis to a plan you can fund.</h2>
+    <div class="weeks">
+      <div class="week">
+        <div class="top"><div class="nm">Diagnose</div></div>
+        <div class="body">Leadership interviews and a review of your motions, data, and systems produce a shared diagnosis of what's structurally limiting execution.</div>
       </div>
-      <div class="istrip-foot"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><span>I review the materials, form initial hypotheses, and prep the working sessions.</span></div>
-    </div>
-
-    <div class="subhead">The three weeks</div>
-    <div style="margin-top:18px;">
-      <div class="tlphase">
-        <div class="tlside">
-          <span class="cal"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span>
-          <div class="tlweek">Week 1</div>
-          <div class="tlname">Diagnose</div>
-        </div>
-        <div class="tlmain">
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></span><div><h4>Leadership interviews</h4><p>Understand the plan, the assumptions behind it, and where leaders believe execution is breaking down.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="5" cy="7" r="2"/><circle cx="19" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7 7h10M6.5 8.5l4.5 7M17.5 8.5l-4.5 7"/></svg></span><div><h4>Workflow &amp; customer-journey review</h4><p>Trace how work and information move across teams — from demand through sale, adoption, renewal, and expansion.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><div><h4>Data &amp; systems review</h4><p>Assess whether leaders and frontline teams have the information and tools to decide well and execute consistently.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 6.5a3 3 0 010 5.8M21 19c0-2.3-1.3-4-3.5-4.6"/></svg></span><div><h4>Diagnostic workshop</h4><p>Review initial findings, challenge assumptions, and align on the highest-value problems to solve.</p></div></div>
-        </div>
+      <div class="week">
+        <div class="top"><div class="nm">Architect</div></div>
+        <div class="body">Leadership agrees on the target operating model — the priorities, ownership, and few changes that will actually move the number.</div>
       </div>
-
-      <div class="tlarrow">↓</div>
-
-      <div class="tlphase">
-        <div class="tlside">
-          <span class="cal"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span>
-          <div class="tlweek">Week 2</div>
-          <div class="tlname">Design</div>
-        </div>
-        <div class="tlmain">
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 6.5a3 3 0 010 5.8M21 19c0-2.3-1.3-4-3.5-4.6"/></svg></span><div><h4>Operating-model workshop</h4><p>Define the guiding choices, ownership model, workflows, measures, and operating rhythms that support execution.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M4 7h8M16 7h4"/><circle cx="14" cy="7" r="2"/><path d="M4 12h4M12 12h8"/><circle cx="10" cy="12" r="2"/><path d="M4 17h10M18 17h2"/><circle cx="16" cy="17" r="2"/></svg></span><div><h4>Solution development</h4><p>Develop practical options for the most important gaps, including tradeoffs, risks, and dependencies.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><div><h4>Leadership decision session</h4><p>Agree on the target operating model and the changes the organization will pursue.</p></div></div>
-        </div>
-      </div>
-
-      <div class="tlarrow">↓</div>
-
-      <div class="tlphase">
-        <div class="tlside">
-          <span class="cal"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span>
-          <div class="tlweek">Week 3</div>
-          <div class="tlname">Activate</div>
-        </div>
-        <div class="tlmain">
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 5h11l-2.5 3L17 11H6"/></svg></span><div><h4>Execution roadmap</h4><p>Translate the decisions into sequenced initiatives, accountable owners, measures, and milestones.</p></div></div>
-          <div class="tlrow"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 6.5a3 3 0 010 5.8M21 19c0-2.3-1.3-4-3.5-4.6"/></svg></span><div><h4>Final leadership session</h4><p>Review the diagnosis, operating model, and roadmap. Confirm what happens next and how progress will be governed.</p></div></div>
-        </div>
+      <div class="week">
+        <div class="top"><div class="nm">Prioritize</div></div>
+        <div class="body">A sequenced roadmap with owners and measures: what to fix now, test first, stop doing, automate, or hire for.</div>
       </div>
     </div>
   </div>
 </section>
-
-<section id="outcome">
-  <div class="wrap">
-    <div class="eyebrow">The outcome</div>
-    <h2 class="narrow" style="margin:0 auto;">By the end, your leadership team has one shared picture.</h2>
-
-    <div class="outbox">
-      <div class="out6">
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span><span class="lab">Shared diagnosis of what limits revenue</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M12 6h7l2 2.5L19 11h-7"/><path d="M12 13H5l-2 2.5L5 18h7"/></svg></span><span class="lab">Clear priorities &amp; operating choices</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 6.5a3 3 0 010 5.8M21 19c0-2.3-1.3-4-3.5-4.6"/></svg></span><span class="lab">Defined ownership across the lifecycle</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M9 4a2 2 0 014 0v1h4v4h1a2 2 0 010 4h-1v4h-4v-1a2 2 0 00-4 0v1H5v-4H4a2 2 0 010-4h1V5h4z"/></svg></span><span class="lab">People, process, data &amp; tech connected</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M7 15l4-4 3 2 5-6"/><path d="M17 7h2.5V9.5"/></svg></span><span class="lab">Prioritized roadmap for execution</span></div>
-        <div class="istep"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="lab">System for documenting decisions &amp; learning</span></div>
-      </div>
-      <div class="out-results">
-        <div class="r"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><p><strong>The immediate result:</strong> greater clarity and coordination.</p></div>
-        <div class="r"><span class="icwrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 01-8 0z"/><path d="M8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3"/><path d="M12 12v4M9 20h6M10 20v-2h4v2"/></svg></span><p><strong>The longer-term result:</strong> a revenue organization that executes more consistently, delivers a better customer experience, and gets smarter with every cycle.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="aic">
-  <div class="wrap">
-    <div class="eyebrow">The idea behind the work</div>
-    <h2 class="narrow" style="margin:0 auto;">Align. Integrate. Collaborate.</h2>
-    <p class="lead narrow" style="margin:16px auto 0;">Winning revenue organizations do three things well.</p>
-    <div class="aic">
-      <div class="col">
-        <h3>Align</h3>
-        <p>Agree on the goals, customer priorities, measures, and choices that guide the business.</p>
-      </div>
-      <div class="col">
-        <h3>Integrate</h3>
-        <p>Connect the roles, workflows, data, and systems needed to execute those choices across the lifecycle.</p>
-      </div>
-      <div class="col">
-        <h3>Collaborate</h3>
-        <p>Build the rhythms and shared accountability that let teams solve problems and act as one.</p>
-      </div>
-    </div>
-    <p class="punch narrow">Together these create two loops: <strong>execution loops</strong> that turn strategy into action, and <strong>learning loops</strong> that capture what worked and why — so the organization compounds its know-how over time.</p>
-  </div>
-</section>
-
-<section id="loops">
-  <div class="wrap">
-    <div class="eyebrow">Why alignment and learning matter</div>
-    <h2 class="narrow" style="margin:0 auto;">Two loops decide whether you grow.</h2>
-    <p class="lead narrow" style="margin:16px auto 0;">When the parts of your revenue engine connect — and when you actually learn from results — growth compounds. When they don't, the same problems repeat.</p>
-
-    <div class="loops-wrap">
-
-      <!-- Diagram 1: execution / alignment loop -->
-      <div class="dgram">
-        <div class="dgram-title">GTM misalignment breaks growth</div>
-        <div class="dgram-sub">When strategy, teams, work, customer experience, and results don't connect, revenue suffers.</div>
-        <svg class="dgram-svg" viewBox="0 0 900 330" role="img" aria-label="How GTM misalignment breaks the growth loop">
-          <defs>
-            <marker id="ah1" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto" markerUnits="strokeWidth">
-              <path d="M0.5,0.5 L6.5,3 L0.5,5.5" fill="none" stroke="#111814" stroke-width="1.5"/>
-            </marker>
-          </defs>
-          <g fill="none" stroke="#111814" stroke-width="1.6">
-            <!-- top row boxes -->
-            <rect x="16" y="16" width="170" height="68" rx="10"/>
-            <rect x="248" y="16" width="170" height="68" rx="10"/>
-            <rect x="480" y="16" width="170" height="68" rx="10"/>
-            <rect x="712" y="16" width="170" height="68" rx="10"/>
-            <!-- bottom row boxes -->
-            <rect x="16" y="246" width="170" height="68" rx="10"/>
-            <rect x="248" y="246" width="170" height="68" rx="10"/>
-            <rect x="480" y="246" width="170" height="68" rx="10"/>
-            <rect x="712" y="246" width="170" height="68" rx="10"/>
-            <!-- top arrows -->
-            <path d="M186 50 H244" marker-end="url(#ah1)"/>
-            <path d="M418 50 H476" marker-end="url(#ah1)"/>
-            <path d="M650 50 H708" marker-end="url(#ah1)"/>
-            <!-- into work -->
-            <path d="M797 84 V242" marker-end="url(#ah1)"/>
-            <path d="M565 84 L744 242" marker-end="url(#ah1)"/>
-            <!-- bottom arrows (leftward) -->
-            <path d="M712 280 H654" marker-end="url(#ah1)"/>
-            <path d="M480 280 H422" marker-end="url(#ah1)"/>
-            <path d="M248 280 H190" marker-end="url(#ah1)"/>
-            <!-- feedback up -->
-            <path d="M101 246 V88" marker-end="url(#ah1)"/>
-            <path d="M333 246 V88" marker-end="url(#ah1)"/>
-          </g>
-          <!-- icons + labels -->
-          <g>
-            <svg x="30" y="37" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="7" height="14"/><rect x="11" y="9" width="9" height="11"/><path d="M6.5 9h2M6.5 12.5h2M6.5 16h2M14 12.5h3M14 16h3"/></svg>
-            <text x="64" y="55" font-size="13.5" font-weight="700" fill="#111814">COMPANY</text>
-
-            <svg x="262" y="37" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4"/><path d="M6 5h11l-2.5 3L17 11H6"/></svg>
-            <text x="296" y="55" font-size="13.5" font-weight="700" fill="#111814">STRATEGY</text>
-
-            <svg x="494" y="37" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="16" r="2.4"/><circle cx="18" cy="16" r="2.4"/><path d="M11 8l-3.5 6M13 8l3.5 6"/></svg>
-            <text x="528" y="55" font-size="13.5" font-weight="700" fill="#111814">TEAMS</text>
-
-            <svg x="726" y="37" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
-            <text x="760" y="55" font-size="13.5" font-weight="700" fill="#111814">OWNERS</text>
-
-            <svg x="30" y="267" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#111814" stroke="none"/></svg>
-            <text x="64" y="285" font-size="13.5" font-weight="700" fill="#111814">RESULTS</text>
-
-            <svg x="262" y="267" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg>
-            <text x="296" y="285" font-size="13.5" font-weight="700" fill="#111814">MEASURES</text>
-
-            <svg x="494" y="267" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10.5" r="0.6" fill="#111814" stroke="none"/><circle cx="15" cy="10.5" r="0.6" fill="#111814" stroke="none"/><path d="M8.5 14.5c1 1.3 2.2 1.8 3.5 1.8s2.5-.5 3.5-1.8"/></svg>
-            <text x="528" y="277" font-size="12" font-weight="700" fill="#111814">CUSTOMER</text>
-            <text x="528" y="292" font-size="12" font-weight="700" fill="#111814">EXPERIENCE</text>
-
-            <svg x="726" y="267" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.2h6v3H9z"/><path d="M8.5 11l1.4 1.4 2.2-2.6M8.5 16l1.4 1.4 2.2-2.6"/></svg>
-            <text x="760" y="285" font-size="13.5" font-weight="700" fill="#111814">WORK</text>
-          </g>
-        </svg>
-
-        <div class="brk-label">— What breaks —</div>
-        <div class="brk-row five">
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M12 6h7l2 2.5L19 11h-7"/><path d="M12 13H5l-2 2.5L5 18h7"/></svg><span>Unclear priorities</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3"/><path d="M4 20c0-3.3 2.7-5.5 6-5.5"/><path d="M15.5 12.5a2 2 0 113 1.7c-.7.4-1 .9-1 1.8M18.5 20v.01"/></svg><span>Confused ownership</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 13.5l-2 2a3 3 0 01-4.2-4.2l2-2M14.5 10.5l2-2a3 3 0 014.2 4.2l-2 2"/><path d="M8 8L6.5 6.5M16 16l1.5 1.5"/></svg><span>Broken handoffs</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg><span>Poor visibility</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="6" y="9" width="3" height="8"/><rect x="11" y="12" width="3" height="5"/><rect x="16" y="14" width="3" height="3"/><path d="M6 6l4 2.5 3-1.5"/><path d="M11 5.5h3v3"/></svg><span>Missed revenue</span></div>
-        </div>
-
-        <div class="fixbar">
-          <span class="fixcheck"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>
-          <span><strong>The fix:</strong> connect strategy, work, customer experience, and results.</span>
-        </div>
-      </div>
-
-      <!-- Diagram 2: learning loop -->
-      <div class="dgram">
-        <div class="dgram-title">Missed insights become missed revenue</div>
-        <div class="dgram-sub">If you don't learn from results, the same problems keep happening.</div>
-        <svg class="dgram-svg" viewBox="0 0 900 360" role="img" aria-label="The learning loop from results to better ways of working">
-          <defs>
-            <marker id="ah2" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto" markerUnits="strokeWidth">
-              <path d="M0.5,0.5 L6.5,3 L0.5,5.5" fill="none" stroke="#111814" stroke-width="1.5"/>
-            </marker>
-          </defs>
-          <g fill="none" stroke="#111814" stroke-width="1.6">
-            <!-- boxes -->
-            <rect x="340" y="20" width="200" height="72" rx="10"/>
-            <rect x="650" y="146" width="190" height="72" rx="10"/>
-            <rect x="345" y="272" width="190" height="70" rx="10"/>
-            <rect x="60" y="146" width="190" height="72" rx="10"/>
-            <rect x="345" y="140" width="190" height="84" rx="12" stroke-dasharray="5 4"/>
-            <!-- clockwise curved arrows -->
-            <path d="M170 142 C185 70 270 52 336 52" marker-end="url(#ah2)"/>
-            <path d="M544 52 C630 52 715 74 738 142" marker-end="url(#ah2)"/>
-            <path d="M744 222 C720 300 640 312 540 308" marker-end="url(#ah2)"/>
-            <path d="M345 308 C250 312 175 300 156 222" marker-end="url(#ah2)"/>
-          </g>
-          <g>
-            <!-- RESULTS -->
-            <svg x="356" y="42" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg>
-            <text x="392" y="52" font-size="14" font-weight="700" fill="#111814">RESULTS</text>
-            <text x="392" y="70" font-size="11" fill="#6b756d">What happened</text>
-            <!-- INSIGHTS -->
-            <svg x="666" y="168" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 00-3.8 10.6c.7.6.8 1 .8 2.4h6c0-1.4.1-1.8.8-2.4A6 6 0 0012 3z"/></svg>
-            <text x="702" y="178" font-size="14" font-weight="700" fill="#111814">INSIGHTS</text>
-            <text x="702" y="196" font-size="11" fill="#6b756d">Why it happened</text>
-            <!-- ACTION -->
-            <svg x="361" y="291" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12a6 6 0 0110-4.5"/><path d="M16 4v4h-4"/><path d="M18 12a6 6 0 01-10 4.5"/><path d="M8 20v-4h4"/></svg>
-            <text x="397" y="301" font-size="14" font-weight="700" fill="#111814">ACTION</text>
-            <text x="397" y="319" font-size="11" fill="#6b756d">What to change</text>
-            <!-- WAYS OF WORKING -->
-            <svg x="76" y="168" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111814" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4.5 8l2.6 1.5M16.9 14.5l2.6 1.5M4.5 16l2.6-1.5M16.9 9.5l2.6-1.5"/></svg>
-            <text x="112" y="176" font-size="12.5" font-weight="700" fill="#111814">WAYS OF WORKING</text>
-            <text x="112" y="193" font-size="10.5" fill="#6b756d">People, roles, process</text>
-            <!-- LEARNING LOOP (center) -->
-            <text x="440" y="176" font-size="14" font-weight="700" fill="#111814" text-anchor="middle">LEARNING LOOP</text>
-            <text x="440" y="195" font-size="11" fill="#6b756d" text-anchor="middle">Read results.</text>
-            <text x="440" y="210" font-size="11" fill="#6b756d" text-anchor="middle">Improve the system.</text>
-          </g>
-        </svg>
-
-        <div class="brk-label">— What breaks —</div>
-        <div class="brk-row four">
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12a6 6 0 0110-4.5"/><path d="M16 4v4h-4"/><path d="M18 12a6 6 0 01-10 4.5"/><path d="M8 20v-4h4"/></svg><span>Repeat mistakes</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/><path d="M3 3l18 18"/></svg><span>Miss what works</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="7"/><path d="M12 14V10M10 2h4M18.5 6.5L20 5"/></svg><span>Slow improvement</span></div>
-          <div class="brk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 8l4 4 3-2 5 5"/><path d="M15 15h3v-3"/></svg><span>Lost revenue</span></div>
-        </div>
-
-        <div class="fixbar">
-          <span class="fixcheck"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>
-          <span><strong>The fix:</strong> turn results into insight, insight into action, and action into better ways of working.</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section id="proof">
   <div class="wrap">
     <div class="eyebrow">Track record</div>
-    <h2 class="narrow" style="margin:0 auto 16px;">I've built this system across companies from $40M to over $1B.</h2>
-    <p class="lead narrow" style="margin:0 auto 0;">Revenue operations leader with 13+ years scaling B2B technology companies — pairing hands-on ownership of forecasting, planning, and analytics with direct partnership to CROs and sales executives. MBA, Wharton; BA, Dartmouth.</p>
-    <ul class="arrowlist">
-      <li>Simplified a 27-plan commission structure into 4 role-based plans</li>
-      <li>Brought an annual revenue model within a few points of actuals</li>
-      <li>Helped grow ACV 1.7x as the business scaled past $1B</li>
-      <li>Drove enablement and change across 800+ sellers worldwide</li>
-      <li>Led corporate development through a $5.7B sale</li>
-      <li>First RevOps hire at Transfr — built planning, ICP, and enablement end to end</li>
-    </ul>
+    <h2 class="narrow" style="margin:0 auto 16px;">I've architected this across companies from $40M to $1B+.</h2>
+    <p class="lead narrow" style="margin:0 auto;">Not theory — fragmented models and unreliable planning turned into measurable operational and economic gains:</p>
+    <div class="records">
+      <div class="rec">
+        <div class="rec-col before"><span class="rlab">Before</span><p>Targeting spread across accounts that looked good but didn't retain.</p></div>
+        <div class="rec-col mid"><span class="rlab">What I changed</span><p>Defined Ideal Customer Profile attributes using retention analysis to sharpen account targeting and prioritization.</p></div>
+        <div class="rec-col after"><span class="rlab">Result</span><p><strong>+20%</strong> average closed-won new-business deal size.</p></div>
+      </div>
+      <div class="rec">
+        <div class="rec-col before"><span class="rlab">Before</span><p>27 commissionable plans — comp questions were slow and error-prone across teams.</p></div>
+        <div class="rec-col mid"><span class="rlab">What I changed</span><p>Simplified 27 plans into 4 and built an AI-enabled compensation knowledge base.</p></div>
+        <div class="rec-col after"><span class="rlab">Result</span><p>A <strong>plain-English source of truth</strong> so Sales, Finance, Legal, and Ops answer rep questions quickly and correctly.</p></div>
+      </div>
+      <div class="rec">
+        <div class="rec-col before"><span class="rlab">Before</span><p>Planning ran on manual models with wide, unreliable forecast variance.</p></div>
+        <div class="rec-col mid"><span class="rlab">What I changed</span><p>Enhanced forecasting methodology with better data models and a redesigned Salesforce process.</p></div>
+        <div class="rec-col after"><span class="rlab">Result</span><p><strong>3x lower</strong> variance-to-forecast and <strong>$80K</strong> in annual spend saved.</p></div>
+      </div>
+      <div class="rec">
+        <div class="rec-col before"><span class="rlab">Before</span><p>At-risk segments and high-growth accounts lacked a coordinated operating motion.</p></div>
+        <div class="rec-col mid"><span class="rlab">What I changed</span><p>Built cross-functional revenue operations programs for at-risk segments and high-growth accounts.</p></div>
+        <div class="rec-col after"><span class="rlab">Result</span><p><strong>&gt;90%</strong> quarterly sales-plan attainment in a key segment.</p></div>
+      </div>
+      <div class="rec">
+        <div class="rec-col before"><span class="rlab">Before</span><p>Territories, quotas, and pipeline targets weren't designed to the revenue goal.</p></div>
+        <div class="rec-col mid"><span class="rlab">What I changed</span><p>Led annual planning — optimized territory design, set bookings and pipeline-generation targets, and established quotas.</p></div>
+        <div class="rec-col after"><span class="rlab">Result</span><p><strong>+30% YoY</strong> sales productivity and improved pipeline conversion.</p></div>
+      </div>
+    </div>
+    <p class="cred narrow">13+ years scaling B2B technology revenue organizations, pairing hands-on ownership of forecasting, planning, and analytics with direct partnership to CROs and sales executives. MBA, Wharton; BA, Dartmouth.</p>
   </div>
 </section>
-
 <section class="closing" id="contact">
   <div class="wrap narrow">
-    <div class="eyebrow" style="color:#5fd08c;">You need a plan to hit the plan</div>
-    <h2>Without an operating system, you're relying on hope and heroics.</h2>
-    <p class="lead">That works for a quarter. It doesn't scale. The answer usually isn't another tool, another hire, or another layer of process — it's diagnosing what's actually in the way and wiring the organization so the right work gets easier to do.</p>
+    <div class="eyebrow" style="color:#5fd08c;">When to act</div>
+    <h2>Keep adding to the system — or decide whether it needs redesigning first.</h2>
+    <p class="trigger">Worth a conversation if you're heading into annual planning, a raise, a new CRO, or a number you're not sure the current system can deliver.</p>
     <div class="cta-row" style="margin-top:28px;">
       <a href="mailto:kyle@kgilbride.com" class="btn">Book a Revenue Operating System Sprint</a>
       <a href="https://www.linkedin.com/in/kyle-gilbride/" class="btn btn-ghost">Connect on LinkedIn</a>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
     <div class="brand" style="color:var(--ink);">Kyle Gilbride</div>
@@ -568,7 +319,7 @@
     </div>
     <div style="margin-top:18px;font-size:0.82rem;color:var(--muted);">&copy; 2026 GTM Alpha LLC. All rights reserved.</div>
   </div>
-</footer> 
+</footer>
   
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3f8709849d2746e2a1b4bd3157fc8118"}'></script>
