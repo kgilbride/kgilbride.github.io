@@ -1,239 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Kyle Gilbride</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy:        #1e3a5f;
-    --navy-light:  #2d5080;
-    --navy-dim:    #e8eef5;
-    --sage:        #4a7c59;
-    --sage-light:  #6a9e79;
-    --sage-dim:    #eef4f0;
-    --white:       #ffffff;
-    --off-white:   #f8f9fa;
-    --text:        #1a1a2e;
-    --text-mid:    #4a5568;
-    --text-dim:    #8a9ab0;
-    --rule:        #e2e8f0;
-    --rule-strong: #cbd5e0;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--white);
-    color: var(--text);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-    padding: 0 48px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Lora', serif;
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--navy);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--navy); }
-
-  /* ── LAYOUT ── */
-  .container { max-width: 1000px; margin: 0 auto; padding: 0 48px; }
-
-  .page-head {
-    padding-top: 160px;
-    padding-bottom: 48px;
-    background: var(--white);
-    position: relative;
-    overflow: hidden;
-  }
-  .page-head::before {
-    content: '';
-    position: absolute;
-    top: -120px; right: -200px;
-    width: 640px; height: 640px;
-    background: radial-gradient(ellipse, rgba(30,58,95,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .back-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-mid);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 28px;
-    transition: color 0.2s;
-    animation: fadeUp 0.7s ease forwards 0.2s;
-    opacity: 0;
-  }
-  .back-link:hover { color: var(--navy); }
-
-  .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .label::after { content: ''; display: block; height: 1px; width: 40px; background: var(--sage); opacity: 0.4; }
-
-  .page-title {
-    font-family: 'Lora', serif;
-    font-size: clamp(34px, 4.5vw, 56px);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-    opacity: 0;
-  }
-  .page-title em { font-style: italic; color: var(--navy); }
-
-  .page-lead {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--text-mid);
-    max-width: 600px;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-    opacity: 0;
-  }
-
-  /* ── FORM CARD ── */
-  .form-wrap { padding-bottom: 96px; }
-  .form-card {
-    background: var(--white);
-    border: 1px solid var(--rule-strong);
-    border-top: 3px solid var(--navy);
-    border-radius: 2px;
-    max-width: 760px;
-    padding: 16px;
-    overflow: hidden;
-  }
-  .form-card iframe {
-    width: 100%;
-    min-height: 880px;
-    border: 0;
-    display: block;
-  }
-
-  .fallback {
-    max-width: 760px;
-    margin-top: 28px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    color: var(--text-dim);
-    line-height: 1.7;
-  }
-  .fallback a {
-    color: var(--navy);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule-strong);
-    padding-bottom: 1px;
-    transition: border-color 0.2s;
-  }
-  .fallback a:hover { border-color: var(--navy); }
-
-  @media (max-width: 768px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    .container { padding: 0 24px; }
-    .page-head { padding-top: 128px; }
-    .form-card iframe { min-height: 1050px; }
-  }
+  nav .brand{display:inline-flex;align-items:center;gap:10px;}
+  .brand-photo{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block;flex:none;}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:var(--muted);font-size:0.95rem;}
+  .nav-links a:hover{color:var(--ink);}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:11px 20px;border-radius:999px;font-size:0.95rem;transition:background .15s ease;}
+  .btn:hover{background:var(--accent-ink);}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none;}}
+  /* page head */
+  .page-head{padding:72px 0 40px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;font-weight:700;color:var(--accent);margin-bottom:14px;}
+  .back-link{display:inline-block;color:var(--muted);font-size:0.9rem;margin-bottom:26px;transition:color .15s ease;}
+  .back-link:hover{color:var(--ink);}
+  .page-lead{margin:20px 0 0;max-width:620px;}
+  /* form */
+  .form-wrap{padding-bottom:84px;}
+  .form-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);max-width:780px;padding:16px;overflow:hidden;}
+  .form-card iframe{width:100%;min-height:900px;border:0;display:block;}
+  .fallback{max-width:780px;margin-top:22px;color:var(--muted);font-size:0.95rem;}
+  .fallback a{color:var(--accent-ink);border-bottom:1px solid var(--line);transition:border-color .15s ease;}
+  .fallback a:hover{border-color:var(--accent);}
+  /* footer */
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:0.9rem;border-top:1px solid var(--line);}
+  footer a{color:var(--ink);}
+  .foot-links{display:flex;gap:20px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  @media(max-width:768px){.form-card iframe{min-height:1080px;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Kyle Gilbride</a>
-  <ul class="nav-links">
-    <li><a href="/#perspective">Perspective</a></li>
-    <li><a href="/#arc">Career</a></li>
-    <li><a href="/#offer">Work with me</a></li>
-    <li><a href="https://kgilbride.com/aboutme">About me</a></li>
-    <li><a href="/contact/">Contact</a></li>
-  </ul>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand" aria-label="Kyle Gilbride — home"><img class="brand-photo" src="data:image/jpeg;base64,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" alt="Kyle Gilbride" width="34" height="34"><span>Kyle Gilbride</span></a>
+    <div class="nav-links">
+      <a href="index.html#problem">The problem</a>
+      <a href="index.html#question">The question</a>
+      <a href="index.html#sprint">The sprint</a>
+      <a href="index.html#proof">Results</a>
+      <a href="#book" class="btn">Book a sprint</a>
+    </div>
+  </div>
 </nav>
-
-<!-- PAGE HEADER -->
-<section class="page-head">
-  <div class="container">
-    <a href="/" class="back-link">← Back to home</a>
-    <p class="label">Let's talk</p>
-    <h1 class="page-title">Start a<br><em>conversation.</em></h1>
-    <p class="page-lead">
-      Whether it's a full-time operating role, an advisory engagement, or just comparing notes
-      on a GTM problem — tell me a little about it below and I'll be in touch.
-    </p>
+<section class="page-head" id="book">
+  <div class="wrap">
+    <a href="index.html" class="back-link">&larr; Back to home</a>
+    <div class="eyebrow">Book a Revenue Operating System Sprint</div>
+    <h1>Start the <span>conversation.</span></h1>
+    <p class="lead page-lead">Heading into annual planning, a raise, a new CRO, or a number you're not sure the current system can deliver? Tell me a little about the situation below and I'll be in touch.</p>
   </div>
 </section>
-
-<!-- FORM -->
 <section class="form-wrap">
-  <div class="container">
+  <div class="wrap">
     <div class="form-card">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSer8yukd4jWylo1SxnLtMjaYwFMD5jzX23ZL2GuWshq4vJglA/viewform?embedded=true"
-        title="Contact Kyle Gilbride">
-        Loading…
+        title="Book a Sprint with Kyle Gilbride">
+        Loading&hellip;
       </iframe>
     </div>
-
     <p class="fallback">
       Form not loading, or prefer email? Reach me at
-      <a href="mailto:kyle@kgilbride.com?subject=Let%27s%20talk">kyle@kgilbride.com</a>
-      &nbsp;·&nbsp;
+      <a href="mailto:kyle@kgilbride.com?subject=Book%20a%20Sprint">kyle@kgilbride.com</a>
+      &nbsp;&middot;&nbsp;
       <a href="https://www.linkedin.com/in/kyle-gilbride/" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </div>
 </section>
+<footer>
+  <div class="wrap">
+    <div class="brand" style="color:var(--ink);justify-content:center;">Kyle Gilbride</div>
+    <div class="foot-links">
+      <a href="mailto:kyle@kgilbride.com">kyle@kgilbride.com</a>
+      <a href="https://www.linkedin.com/in/kyle-gilbride/">LinkedIn</a>
+      <a href="index.html">kgilbride.com</a>
+    </div>
+    <div style="margin-top:18px;font-size:0.82rem;color:var(--muted);">&copy; 2026 GTM Alpha LLC. All rights reserved.</div>
+  </div>
+</footer>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
